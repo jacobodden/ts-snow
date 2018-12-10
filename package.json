@@ -1,0 +1,30 @@
+{
+  "name": "snowglobe",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/scripts/main.js",
+  "scripts": {
+    "build": "npm run js && npm run static",
+    "serve": "npm run build && http-server",
+    "js": "npx rollup -c",
+    "static": "rsync -rm src/static dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobodden/snowglobe.git"
+  },
+  "author": "Jacob Odden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobodden/snowglobe/issues"
+  },
+  "homepage": "https://github.com/jacobodden/snowglobe#readme",
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
