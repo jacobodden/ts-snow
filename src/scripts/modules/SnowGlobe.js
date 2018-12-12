@@ -20,7 +20,7 @@ export class SnowGlobe {
   }
   init () {
     // build out our snowflakes
-    for (let x = 0; x < this.width / 8; x++) {
+    for (let x = 0; x < this.width / 4; x++) {
       this.snowflakes.push(new Snowflake())
     }
 

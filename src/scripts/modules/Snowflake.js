@@ -11,17 +11,29 @@ export class Snowflake {
   }
   reset () {
     this.x = this.randBetween(0, window.innerWidth)
-    this.y = this.randBetween(0, -window.innerHeight)
+    this.y = this.randBetween(0, -window.innerHeight) - this.randBetween(0, 30)
     this.radius = this.randBetween(2, 5)
-    this.dx = this.randBetween(-2, 2)
-    this.dy = this.randBetween(0.5, 3)
+    this.dx = this.randBetween(-4, 4)
+    this.dy = this.randBetween(2, 6)
     this.alpha = this.randBetween(0.1, 0.8)
+    this.speed = this.randBetween(1, 3)
+    this.t = new Date()
   }
   randBetween (min, max) {
     return min + Math.random() * (max - min)
   }
   update () {
-    this.x += this.dx
+    // this.x += this.dx
+    this.x +=
+      Math.sin(
+        (new Date().getTime() - this.t.getTime()) / (1000 * this.speed) +
+          2 *
+            Math.cos(
+              0.3 *
+                ((new Date().getTime() - this.t.getTime()) /
+                  (1000 * this.speed))
+            )
+      ) * this.dx
     this.y += this.dy
     if (this.y - this.radius * 2 > window.innerHeight) this.reset()
   }
