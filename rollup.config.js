@@ -11,10 +11,24 @@ const version = pkg.version
 export default [
   {
     input: 'src/scripts/main.js',
-    output: {
+    output: [{
       file: 'dist/scripts/main.min.js',
       format: 'iife'
-    },
+    }],
+    plugins: [
+      replace({
+        delimiters: ['{{', '}}'],
+        version
+      }),
+      terser()
+    ]
+  },
+  {
+    input: 'src/scripts/main.js',
+    output: [{
+      file: 'src/scripts/main.min.js',
+      format: 'iife'
+    }],
     plugins: [
       replace({
         delimiters: ['{{', '}}'],
