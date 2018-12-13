@@ -1,6 +1,6 @@
-import { Snowflake } from './Snowflake'
+import Snowflake from './Snowflake'
 
-export class SnowGlobe {
+export default class SnowGlobe {
   constructor () {
     this.height = 0
     this.width = 0

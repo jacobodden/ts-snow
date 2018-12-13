@@ -1,4 +1,4 @@
-import { SnowGlobe } from './modules/SnowGlobe'
+import SnowGlobe from './modules/SnowGlobe'
 
 const sg = new SnowGlobe()
 

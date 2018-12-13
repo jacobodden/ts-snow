@@ -1,4 +1,4 @@
-export class Snowflake {
+export default class Snowflake {
   constructor () {
     this.x = 0
     this.y = 0
